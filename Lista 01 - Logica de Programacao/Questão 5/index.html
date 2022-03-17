@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Family Spot Resort</title>
+    <style>
+        h1{ font-family:monospace; font-weight: bold; color: hsl(183, 100%, 15%); font-size: 3rem; text-align: center;}
+       body{background-image: linear-gradient(to top left, hsl(185, 41%, 84%),hsl(305, 41%, 84%) ); height: 100vh;} 
+       main{background-color: white; width: 35%; display:block; min-height: 14rem; padding: 3rem; text-align: center; border-radius: 1rem; margin: 5rem auto;} 
+        p{ font-family:monospace; font-weight: bold; color: hsl(183, 100%, 15%); font-size: 1.25rem;}
+        input{ border: none; background-color: hsl(189, 41%, 97%); display: block; width: 100%; height: 2.5rem; text-align: end; border-radius: 0.25rem; box-sizing: border-box; padding-right: 3rem; font-family: monospace; font-size: 1rem; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <Header>
+        <h1>THE FAMILY SPOT RESORT</h1>
+    </Header>
+    <main>
+        <p>Informe uma temperatura para saber a atividade apropriada em °C:</p>
+        <input type="number" name="temperatura" id="valorDaTemperatura" placeholder="Ex: 20" onchange="imprimeAtividade()" value="0" required >
+        <p id="atividade"></p>
+
+    </main>
+    <script>
+        
+        function imprimeAtividade(){
+            let valorTemperatura = document.getElementById("valorDaTemperatura").value;
+            if(valorTemperatura >= 26){
+                console.log("A melhor atividade para hoje é: Natação!");
+                document.getElementById("atividade").innerHTML = "A melhor atividade para hoje é:<br> Natação!";
+
+            } else if(valorTemperatura>=15 && valorTemperatura<26){
+                console.log("A melhor atividade para hoje é: Tênis!");
+                document.getElementById("atividade").innerHTML = "A melhor atividade para hoje é:<br> Tênis!";
+
+            } else if(valorTemperatura>=5 && valorTemperatura<15){
+                console.log("A melhor atividade para hoje é: Golfe!");
+                document.getElementById("atividade").innerHTML = "A melhor atividade para hoje é:<br> Golfe!";
+
+            }else{
+                console.log("A melhor atividade para hoje é: Esqui!");
+                document.getElementById("atividade").innerHTML = "A melhor atividade para hoje é:<br> Esqui!";
+
+            }
+        }
+    </script>
+</body>
+</html>
