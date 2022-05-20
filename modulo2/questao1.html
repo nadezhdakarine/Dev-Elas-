@@ -1,0 +1,23 @@
+<script>
+    //Crie em JS uma classe Semáforo com um atributo "estado" privado e crie um método
+    //para alterar o estado de acordo com a regra de negócio do semáforo (verde->amarelo->vermelho->verde):
+
+    class Semaforo{
+    #estado
+    constructor(estado){
+        this.#estado = 'vermelho'
+    }
+    alteraEstado(){
+        if(this.#estado === 'amarelo'){
+            this.#estado = 'vermelho'
+        } 
+        else if (this.#estado === 'verde'){
+            this.#estado = 'amarelo'
+        } 
+        else if(this.#estado === 'vermelho'){
+            this.#estado = 'verde'
+        }
+        else throw new Error('algo deu errado aqui')
+    }
+}
+</script>

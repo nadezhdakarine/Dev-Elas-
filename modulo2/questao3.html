@@ -1,0 +1,53 @@
+<script>
+    class Cliente{
+        #nome;
+        #cpf;
+        #endereco;
+
+        constructor(nome, cpf){
+            this.#nome = nome
+            this.#cpf = cpf
+            this.#endereco = 'endereço não indisponivel'
+        }
+
+        get nome(){
+            return this.#nome
+        }
+        get cpf(){
+            return this.#cpf
+        }
+        get endereco(){
+            return this.#endereco
+        }
+
+        set nome(nome){
+            this.#nome = nome
+        }
+        set cpf(cpf){
+            this.#cpf = cpf
+        }
+        set endereco(endereco){
+            if(endereco instanceof Endereco){
+                this.#endereco = endereco.endereco;
+            } else{
+               console.log('O endereço informado não é da classe Endereço.')
+            }
+            
+        }
+    }
+
+    class Endereco extends Cliente{
+        #endereco
+        constructor(nome, cpf, endereco) {
+            super(nome, cpf)
+            this.#endereco = endereco
+        }
+        get endereco(){
+            return this.#endereco
+        }
+        set endereco (endereco) {
+            this.#endereco = endereco
+        }
+    }
+
+</script>
