@@ -1,0 +1,57 @@
+<script>
+    //Crie uma classe Pessoa, com nome; Uma classe Cidadao, que herde pessoa e tenha cpf;
+    // e uma classe Cliente que herde cidadão e tenha login e senha. Cada classe deve pedir
+    // no construtor toda a informação necessária para criar um objeto consistente (valores
+    // para cada um dos atributos) levando em conta os construtores das super-classes, que 
+    //devem ser invocados nas classes derivadas.
+
+    class Pessoa {
+        #nome;
+        constructor (nome){
+            this.#nome = nome
+        }
+        get pegaNome(){
+            return this.#nome
+        }
+        set alteraNome(nome){
+            this.#nome = nome
+        }
+    }
+
+    class Cidadao extends Pessoa {
+        #cpf;
+        constructor(nome, cpf){
+            super(nome);
+            this.#cpf = cpf
+        }
+        get pegaCpf(){
+            return this.#cpf
+        }
+        set alteraCpf(cpf){
+            this.#cpf = cpf
+        }
+    }
+
+    class Cliente extends Cidadao {
+        #login
+        #senha 
+        constructor(nome,cpf,login,senha){
+            super(nome, cpf)
+            this.#login = login
+            this.#senha = senha
+        }
+        get pegaLogin(){
+            return this.#login
+        }
+        set alteraLogin(login){
+            this.#login = login
+        }
+        get pegaSenha(){
+            return this.#senha
+        }
+        set alteraSenha(senha){
+            this.#senha = senha
+        }
+    }
+        
+</script>
